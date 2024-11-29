@@ -14,20 +14,16 @@ class MainWidget(QtWidgets.QMainWindow):
         self.setCentralWidget(self.central_widget)
 
 def main():
-    
     app = QtWidgets.QApplication(sys.argv)
     window = MainWidget()
     layout = QtWidgets.QVBoxLayout()
-    image_viewer = ImageViewer("C:/Users/user/Pictures/image01.png")
-    image_selecter = ImageSelecter(testListener)
+    image_viewer = ImageViewer()
+    image_selecter = ImageSelecter(image_viewer.setImage)
     layout.addWidget(image_viewer)
     layout.addWidget(image_selecter)
     window.central_widget.setLayout(layout)
     window.show()
     return app.exec_()
-
-def testListener(image_path):
-    print("끼얏호우!", image_path)
 
 if __name__ == "__main__":
     sys.exit(main())
