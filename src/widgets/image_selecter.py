@@ -1,6 +1,6 @@
 import pathlib
 from PySide6 import QtWidgets, QtCore
-from lib.util import getDocumentPath
+from lib.util import getPicturesPath
 class ImageSelecter(QtWidgets.QWidget):
     def __init__(self, listener):
         super().__init__()
@@ -26,7 +26,7 @@ class ImageSelecter(QtWidgets.QWidget):
         path, _ = QtWidgets.QFileDialog.getOpenFileName(
             self,
             "이미지 선택",
-            getDocumentPath(),
+            getPicturesPath(),
             "Image (*.jpg *.png *.jpeg)"
         )
         self.listener(path)
