@@ -13,6 +13,8 @@ class MainWidget(QtWidgets.QMainWindow):
         self.setGeometry(100, 100, 800, 600)
         self.central_widget = QtWidgets.QWidget()
         self.setCentralWidget(self.central_widget)
+    def closeEvent(self, event):
+        print("Main Close..")
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
