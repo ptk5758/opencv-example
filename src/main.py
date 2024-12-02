@@ -2,6 +2,7 @@ import sys
 from PySide6 import  QtWidgets
 from widgets.image_selecter import ImageSelecter
 from widgets.image_viewer import ImageViewer
+from widgets.camera import Camera
 
 class MainWidget(QtWidgets.QMainWindow):
     def __init__(self):
@@ -17,10 +18,12 @@ def main():
     app = QtWidgets.QApplication(sys.argv)
     window = MainWidget()
     layout = QtWidgets.QVBoxLayout()
-    image_viewer = ImageViewer()
-    image_selecter = ImageSelecter(image_viewer.setImage)
-    layout.addWidget(image_viewer)
-    layout.addWidget(image_selecter)
+    # image_viewer = ImageViewer()
+    # image_selecter = ImageSelecter(image_viewer.setImage)
+    # layout.addWidget(image_viewer)
+    # layout.addWidget(image_selecter)
+    camera_widget = Camera()
+    layout.addWidget(camera_widget)
     window.central_widget.setLayout(layout)
     window.show()
     return app.exec_()
